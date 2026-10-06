@@ -5,3 +5,4 @@ The labs and presentations in this repository are linked from the [project page]
 ## Direct lab links
 
 - [2TUP presentation](https://salmouneaymane.github.io/labs-mobile/2TUP/)
+- [Marp presentation](./Marp/marp.md)
