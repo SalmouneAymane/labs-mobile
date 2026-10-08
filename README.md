@@ -7,8 +7,8 @@ The labs and presentations in this repository are linked from the [project page]
 - [2TUP presentation](https://salmouneaymane.github.io/labs-mobile/2TUP/)
 - [Open the Marp presentation](https://salmouneaymane.github.io/labs-mobile/Marp/)
 - [Open the Projet fil rouge presentation](https://salmouneaymane.github.io/labs-mobile/Projet-Fil-Rouge/)
-- [Marp Markdown source](./Marp/marp.md)
-- [Projet fil rouge Markdown source](./Projet-Fil-Rouge/marp.md)
+- [Scrum lab](https://docs.google.com/presentation/d/1MbHh-CiDlV9sU_ccPLvOzxk8zY_nR9zDnNXsWo8oV1U/edit?slide=id.p#slide=id.p)
+- [Design Thinking presentation](https://canva.link/xvsaxvs1haumths)
 
 ### Publishing the Marp presentation
 
