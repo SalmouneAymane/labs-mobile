@@ -13,7 +13,7 @@
 # 6. Architecture des Cas d'Utilisation (UML)
 
 # 7. Planification Agile : Sprints et Cas d'Utilisation
-
+   
 # 8. Branche Technique & Diagramme de Classe
 
 # 9. Conception - Ideation
