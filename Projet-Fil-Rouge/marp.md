@@ -3,8 +3,8 @@ marp: true
 theme: default
 paginate: true
 size: 16:9
-title: Projet fil rouge â€” version premium
-description: PrÃ©sentation alternative du projet fil rouge
+title: Projet fil rouge — version premium
+description: Présentation alternative du projet fil rouge
 style: |
   :root {
     --bg: #071a3b;
@@ -136,11 +136,11 @@ style: |
 
 # Projet fil rouge
 
-## PrÃ©sentation finale
+## Présentation finale
 
 ---
 
-# Introduction gÃ©nÃ©rale
+# Introduction générale
 
 ## Contexte et vision du projet
 
@@ -150,7 +150,7 @@ style: |
 
 ---
 
-# DÃ©fis opÃ©rationnels
+# Défis opérationnels
 
 ---
 
@@ -158,11 +158,11 @@ style: |
 
 ---
 
-# DÃ©finition du problÃ¨me
+# Définition du problème
 
 ---
 
-# MÃ©thode de travail
+# Méthode de travail
 
 ## Approche hybride : Scrum, Design Thinking et 2TUP
 
@@ -180,7 +180,7 @@ style: |
 
 ---
 
-# Gestion des tÃ¢ches
+# Gestion des tâches
 
 ---
 
@@ -202,43 +202,43 @@ style: |
 
 ---
 
-# SynthÃ¨se de la vision
+# Synthèse de la vision
 
 ---
 
-# DÃ©finition du problÃ¨me
+# Définition du problème
 
 ---
 
-# IdÃ©ation
+# Idéation
 
 ---
 
-# Architecture des cas dâ€™utilisation
+# Architecture des cas d’utilisation
 
 ## UML
 
 ---
 
-# Les acteurs du systÃ¨me
+# Les acteurs du système
 
 ---
 
-# DÃ©tail des cas dâ€™utilisation
+# Détail des cas d’utilisation
 
 ---
 
-# Cas dâ€™utilisation global
+# Cas d’utilisation global
 
 ---
 
 # Planification agile
 
-## Sprints et cas dâ€™utilisation
+## Sprints et cas d’utilisation
 
 ---
 
-# StratÃ©gie de dÃ©veloppement
+# Stratégie de développement
 
 ---
 
@@ -250,13 +250,13 @@ style: |
 
 # Sprint 2
 
-## SystÃ¨me client et commandes en temps rÃ©el
+## Système client et commandes en temps réel
 
 ---
 
 # Sprint 3
 
-## Assistant IA et opÃ©rations de paiement
+## Assistant IA et opérations de paiement
 
 ---
 
@@ -274,7 +274,7 @@ style: |
 
 ---
 
-# Conception gÃ©nÃ©rale
+# Conception générale
 
 ---
 
@@ -292,19 +292,19 @@ style: |
 
 ---
 
-# RÃ©alisation et dÃ©veloppement
+# Réalisation et développement
 
 ## Outils et technologies
 
 ---
 
-# Outils de dÃ©veloppement
+# Outils de développement
 
 ---
 
 # Conclusion
 
-## RÃ©sultat attendu
+## Résultat attendu
 
 ---
 
@@ -314,11 +314,11 @@ style: |
 
 ## Questions & discussion
 
-# Technologies utilisÃ©es
+# Technologies utilisées
 
 ---
 
-# Bilan dâ€™implÃ©mentation des sprints
+# Bilan d’implémentation des sprints
 
 ---
 
