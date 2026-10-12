@@ -8,4 +8,7 @@
 6. OpenCode
 7. Pandoc
 8. OmniRoute
-   
+9. 2tup
+10. design thinking
+11. scrum
+12. github pages 
