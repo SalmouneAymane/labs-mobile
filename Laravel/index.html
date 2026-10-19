@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f6fa">
+    <meta name="description" content="Lab d'introduction à Laravel : rôle, fonctionnement, avantages et usages dans le développement Web.">
+    <title>Découvrir Laravel — Lab</title>
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #f5f6fa;
+            color: #192238;
+            font-synthesis: none;
+            text-rendering: optimizeLegibility;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(ellipse at 8% 0%, rgb(239 68 68 / 9%), transparent 32rem),
+                radial-gradient(ellipse at 100% 45%, rgb(65 194 174 / 10%), transparent 30rem),
+                #f5f6fa;
+        }
+
+        main {
+            width: min(100% - 40px, 880px);
+            margin: 0 auto;
+            padding: 48px 0 72px;
+        }
+
+        .back-link {
+            color: #5967c9;
+            font-size: 0.92rem;
+            font-weight: 650;
+            text-decoration: none;
+        }
+
+        .back-link:hover,
+        .back-link:focus-visible {
+            text-decoration: underline;
+        }
+
+        .hero {
+            margin: 38px 0 26px;
+            padding: clamp(28px, 7vw, 58px);
+            border: 1px solid #f1d9d9;
+            border-radius: 28px;
+            background: linear-gradient(135deg, #fff 15%, #fff5f4 100%);
+            box-shadow: 0 18px 50px rgb(32 44 82 / 7%);
+        }
+
+        .eyebrow {
+            margin: 0 0 12px;
+            color: #cf3e3e;
+            font-size: 0.76rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2.8rem, 10vw, 5.2rem);
+            letter-spacing: -0.07em;
+            line-height: 0.98;
+        }
+
+        .hero-intro {
+            max-width: 620px;
+            margin: 20px 0 0;
+            color: #59647a;
+            font-size: clamp(1.05rem, 2.6vw, 1.24rem);
+            line-height: 1.65;
+        }
+
+        .goal {
+            margin: 20px 0 0;
+            padding: 16px 18px;
+            border-left: 4px solid #e64b4b;
+            border-radius: 0 12px 12px 0;
+            background: #fff;
+            color: #374258;
+            line-height: 1.6;
+        }
+
+        .content {
+            display: grid;
+            gap: 16px;
+        }
+
+        section {
+            padding: clamp(22px, 5vw, 32px);
+            border: 1px solid #e4e7f0;
+            border-radius: 20px;
+            background: rgb(255 255 255 / 92%);
+            box-shadow: 0 10px 28px rgb(32 44 82 / 4%);
+        }
+
+        h2 {
+            margin: 0 0 14px;
+            font-size: clamp(1.35rem, 4vw, 1.7rem);
+            letter-spacing: -0.035em;
+        }
+
+        h3 {
+            margin: 22px 0 8px;
+            font-size: 1.05rem;
+        }
+
+        p,
+        li {
+            color: #59647a;
+            line-height: 1.7;
+        }
+
+        p {
+            margin: 8px 0;
+        }
+
+        ul,
+        ol {
+            margin: 10px 0 0;
+            padding-left: 22px;
+        }
+
+        li + li {
+            margin-top: 5px;
+        }
+
+        strong {
+            color: #263248;
+        }
+
+        .flow {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+            margin: 18px 0 8px;
+        }
+
+        .flow span {
+            padding: 9px 12px;
+            border: 1px solid #e8eaf1;
+            border-radius: 10px;
+            background: #f8f9fc;
+            color: #344057;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .flow b {
+            color: #d84a4a;
+        }
+
+        pre {
+            overflow-x: auto;
+            margin: 16px 0 8px;
+            padding: 18px;
+            border-radius: 14px;
+            background: #192238;
+            color: #eef2ff;
+            font: 0.9rem/1.7 ui-monospace, SFMono-Regular, Consolas, monospace;
+        }
+
+        code {
+            font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+        }
+
+        .callout {
+            padding: 14px 16px;
+            border-radius: 12px;
+            background: #fff5f4;
+            color: #654345;
+        }
+
+        .resources a {
+            color: #5967c9;
+            font-weight: 650;
+            text-underline-offset: 3px;
+        }
+
+        footer {
+            margin-top: 22px;
+            color: #778096;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <a class="back-link" href="../">← Retour à la bibliothèque des labs</a>
+
+        <header class="hero">
+            <p class="eyebrow">Lab · Développement Web</p>
+            <h1>Découvrir Laravel</h1>
+            <p class="hero-intro">Comprendre le framework PHP qui aide à construire des applications Web structurées, maintenables et rapidement testables.</p>
+            <p class="goal"><strong>Objectif du lab :</strong> rechercher et comprendre ce qu’est Laravel, son rôle, ses avantages et son utilisation dans le développement d’applications Web.</p>
+        </header>
+
+        <div class="content">
+            <section aria-labelledby="definition">
+                <h2 id="definition">1. Qu’est-ce que Laravel ?</h2>
+                <p>Laravel est un <strong>framework open source écrit en PHP</strong>. Un framework fournit une structure et des outils réutilisables : au lieu de tout construire à partir de zéro, le développeur s’appuie sur des conventions et des composants communs.</p>
+                <p>Laravel est principalement utilisé pour développer la partie serveur d’applications Web : sites dynamiques, API et applications métier. Il ne remplace pas PHP ; il organise et accélère son utilisation.</p>
+            </section>
+
+            <section aria-labelledby="role">
+                <h2 id="role">2. Quel est son rôle ?</h2>
+                <p>Une application Web reçoit des requêtes, applique des règles métier, lit ou modifie des données, puis renvoie une réponse. Laravel fournit des outils pour organiser ces étapes, notamment avec une architecture de type <strong>MVC</strong> :</p>
+                <ul>
+                    <li><strong>Model (modèle) :</strong> représente et manipule les données, souvent avec Eloquent, l’ORM de Laravel.</li>
+                    <li><strong>View (vue) :</strong> présente l’information à l’utilisateur, par exemple avec le moteur de templates Blade.</li>
+                    <li><strong>Controller (contrôleur) :</strong> reçoit la requête et coordonne le traitement.</li>
+                </ul>
+                <div class="flow" aria-label="Parcours d'une requête">
+                    <span>Requête HTTP</span><b aria-hidden="true">→</b>
+                    <span>Route</span><b aria-hidden="true">→</b>
+                    <span>Contrôleur</span><b aria-hidden="true">→</b>
+                    <span>Modèle / données</span><b aria-hidden="true">→</b>
+                    <span>Réponse</span>
+                </div>
+                <p>Une route associe une URL et une méthode HTTP à un traitement. Le contrôleur peut appeler un modèle, puis retourner une vue HTML ou des données JSON.</p>
+            </section>
+
+            <section aria-labelledby="features">
+                <h2 id="features">3. Outils et avantages</h2>
+                <ul>
+                    <li><strong>Routage et middleware :</strong> définissent les URL et les traitements transversaux, comme l’authentification.</li>
+                    <li><strong>Eloquent ORM :</strong> facilite le travail avec les bases de données via des modèles PHP.</li>
+                    <li><strong>Migrations :</strong> décrivent et versionnent les changements de structure de la base de données.</li>
+                    <li><strong>Blade :</strong> permet de créer des pages HTML à partir de vues réutilisables.</li>
+                    <li><strong>Écosystème :</strong> propose des outils pour les tests, les files d’attente, la validation, le cache et bien plus.</li>
+                </ul>
+                <p>Ces outils favorisent la <strong>productivité</strong>, la <strong>cohérence du code</strong> et la <strong>maintenabilité</strong>. Ils ne garantissent pas automatiquement une application de qualité : le développeur doit toujours concevoir, sécuriser et tester son code.</p>
+            </section>
+
+            <section aria-labelledby="example">
+                <h2 id="example">4. À quoi ressemble une route ?</h2>
+                <p>Dans une application Laravel, les routes Web sont généralement définies dans <code>routes/web.php</code>. Voici une route simple qui renvoie une réponse :</p>
+                <pre><code>use Illuminate\Support\Facades\Route;
+
+Route::get('/bonjour', function () {
+    return 'Bonjour !';
+});</code></pre>
+                <p>Lorsqu’un navigateur envoie une requête <code>GET /bonjour</code>, Laravel trouve cette route et renvoie le texte. Dans une application plus complète, la route appelle souvent un contrôleur plutôt qu’une fonction anonyme.</p>
+            </section>
+
+            <section aria-labelledby="usage">
+                <h2 id="usage">5. Quand utiliser Laravel ?</h2>
+                <p>Laravel convient notamment aux sites et applications métier avec des utilisateurs, des formulaires, des données, des rôles ou des API. Il est souvent choisi lorsqu’une équipe veut s’appuyer sur PHP et un écosystème structuré.</p>
+                <p class="callout"><strong>À retenir :</strong> un framework apporte une base et des conventions, mais il faut apprendre PHP, le fonctionnement HTTP, les bases de données et les bonnes pratiques de sécurité pour l’utiliser correctement.</p>
+            </section>
+
+            <section aria-labelledby="activity">
+                <h2 id="activity">6. Activité de recherche</h2>
+                <ol>
+                    <li>Consultez la documentation officielle de Laravel et identifiez trois fonctionnalités.</li>
+                    <li>Expliquez avec vos propres mots le trajet d’une requête dans une application Laravel.</li>
+                    <li>Comparez Laravel à du PHP écrit sans framework : qu’est-ce qui devient plus simple, et qu’est-ce qui reste à la charge du développeur ?</li>
+                    <li>Présentez un exemple de site ou d’API qui pourrait être développé avec Laravel et justifiez votre choix.</li>
+                </ol>
+            </section>
+
+            <section class="resources" aria-labelledby="resources">
+                <h2 id="resources">Pour aller plus loin</h2>
+                <ul>
+                    <li><a href="https://laravel.com/docs" target="_blank" rel="noopener noreferrer">Documentation officielle de Laravel</a></li>
+                    <li><a href="https://laravel.com/" target="_blank" rel="noopener noreferrer">Site officiel de Laravel</a></li>
+                    <li><a href="https://www.php.net/manual/fr/" target="_blank" rel="noopener noreferrer">Manuel officiel de PHP</a></li>
+                </ul>
+            </section>
+        </div>
+        <footer>Lab d’introduction · Laravel et le développement d’applications Web</footer>
+    </main>
+</body>
+</html>

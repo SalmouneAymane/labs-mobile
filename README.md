@@ -11,6 +11,8 @@ The labs and presentations in this repository are linked from the [project page]
 - [Design Thinking presentation](https://canva.link/xvsaxvs1haumths)
 - [What is a Lab presentation](https://salmouneaymane.github.io/labs-mobile/what_is_lab/)
 - [What is a Lab source](./what_is_lab/doc.md)
+- [Laravel overview lab](https://salmouneaymane.github.io/labs-mobile/Laravel/)
+- [Git & GitHub lab](./git/git.md)
 - [Markdown folder](./markdown/)
 
 ### Publishing the Marp presentation
