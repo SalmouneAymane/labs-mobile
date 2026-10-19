@@ -11,7 +11,8 @@ The labs and presentations in this repository are linked from the [project page]
 - [Design Thinking presentation](https://canva.link/xvsaxvs1haumths)
 - [What is a Lab presentation](https://salmouneaymane.github.io/labs-mobile/what_is_lab/)
 - [What is a Lab source](./what_is_lab/doc.md)
-- [Laravel overview lab](https://salmouneaymane.github.io/labs-mobile/Laravel/)
+- [Laravel presentation](https://salmouneaymane.github.io/labs-mobile/Laravel/)
+- [Laravel Marp source and plan](./Laravel/marp.md)
 - [Git & GitHub lab](./git/git.md)
 - [Markdown folder](./markdown/)
 
@@ -33,3 +34,12 @@ The labs and presentations in this repository are linked from the [project page]
   - `npx --yes @marp-team/marp-cli@4.5.1 Projet-Fil-Rouge/marp.md --html --output Projet-Fil-Rouge/index.html`
 - Push both files to GitHub.
 - Open `https://salmouneaymane.github.io/labs-mobile/Projet-Fil-Rouge/`.
+
+### Publishing the Laravel presentation
+
+- `Laravel/index.html` is the browser-ready slide deck served by GitHub Pages.
+- `Laravel/marp.md` is the editable Marp source, starting with the presentation plan.
+- Regenerate the HTML after editing the source:
+  - `npx --yes @marp-team/marp-cli@4.5.1 Laravel/marp.md --html --output Laravel/index.html`
+- Push both files to GitHub.
+- Open `https://salmouneaymane.github.io/labs-mobile/Laravel/`.
