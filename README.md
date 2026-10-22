@@ -13,6 +13,8 @@ The labs and presentations in this repository are linked from the [project page]
 - [What is a Lab source](./what_is_lab/doc.md)
 - [Laravel presentation](https://salmouneaymane.github.io/labs-mobile/Laravel/)
 - [Laravel Marp source and plan](./Laravel/marp.md)
+- [MVC presentation](https://salmouneaymane.github.io/labs-mobile/MVC/)
+- [MVC Marp source](./MVC/presentation-mvc.md)
 - [Git & GitHub lab](./git/git.md)
 - [Markdown folder](./markdown/)
 

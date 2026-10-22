@@ -13,3 +13,4 @@
 11. scrum
 12. github pages 
 13. Laravel : rôle, avantages et utilisation dans le développement Web
+14. Architecture MVC : Model, View et Controller dans Laravel
