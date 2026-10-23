@@ -4,39 +4,25 @@ theme: default
 paginate: true
 size: 16:9
 style: |
-  section {
-    background-color: #0f172a;
-    color: #f8fafc;
-    font-family: 'Inter', system-ui, sans-serif;
-    padding: 40px 60px;
-  }
-  h1, h2, h3 {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    color: #38bdf8;
-  }
-  h1 { font-size: 1.8em; }
-  h2 { font-size: 1.3em; }
-  h3 { font-size: 1.05em; color: #7dd3fc; }
+  section { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', system-ui, sans-serif; padding: 40px 60px; }
+  h1, h2, h3 { font-family: 'Inter', system-ui, sans-serif; font-weight: 600; letter-spacing: -0.02em; }
+  h1 { color: #38bdf8; font-size: 1.8em; }
+  h2 { color: #38bdf8; font-size: 1.3em; }
+  h3 { color: #7dd3fc; font-size: 1.05em; }
   section.light { background-color: #f8fafc; color: #0f172a; }
   section.light h1, section.light h2, section.light h3 { color: #0284c7; }
-  pre, code {
-    background-color: #1e293b;
-    color: #e2e8f0;
-    border-radius: 6px;
-    font-family: 'Fira Code', 'Consolas', monospace;
-  }
+  pre, code { background-color: #1e293b; color: #e2e8f0; border-radius: 6px; font-family: 'Fira Code', 'Consolas', monospace; }
   section.light pre, section.light code { background-color: #e2e8f0; color: #0f172a; }
   table { width: 100%; border-collapse: collapse; font-size: 0.78em; line-height: 1.35; }
   th { background-color: #1e293b; color: #f8fafc; font-weight: 600; padding: 8px 10px; text-align: left; vertical-align: top; }
   td { background-color: #172033; color: #f8fafc; padding: 8px 10px; border-bottom: 1px solid #475569; vertical-align: top; }
   section.light th { background-color: #e0f2fe; color: #0f172a; }
-  section.light td { background-color: #fff; color: #0f172a; border-bottom: 1px solid #cbd5e1; }
+  section.light td { background-color: #ffffff; color: #0f172a; }
   section.light tbody tr:nth-child(even) td { background-color: #f1f5f9; }
+  section.light td { border-bottom: 1px solid #cbd5e1; }
 ---
 
-# what_is_lab
+# Qu'est-ce qu'un lab ?
 
 ---
 <!-- _class: light -->
@@ -44,98 +30,63 @@ style: |
 ## Lab Plan
 
 1. Introduction
-2. Problems Encountered
-3. Solutions Implemented
+2. Technical Stack
+3. Definition (if needed)
+4. Problem Statement
+5. Solution
+6. Practice
 
 ---
 
 ## 1. Introduction
 
-- **Purpose & scope:** Présenter une méthode d'apprentissage centrée sur la recherche, la compréhension et la transmission.
-- **Objectif :** transformer une question en explication claire que l'on peut enseigner.
-- **Parcours :** Search → Read → Think → Questions → Understand.
+- Comprendre le rôle d'un lab dans un apprentissage technique.
+- Transformer un sujet en activité guidée et vérifiable.
+- Apprendre en cherchant, pratiquant, expliquant et recevant du feedback.
 
 ---
 <!-- _class: light -->
 
-## 2. Problems Encountered
+## 2. Technical Stack
 
-- Le support source décrit une démarche d'apprentissage et ne rapporte pas d'incident technique.
-- **No blocking technical problems encountered during implementation.**
-
----
-
-## 3. Solutions Implemented
-
-- Aucun correctif logiciel n'est pertinent pour ce sujet.
-- Le support propose de combler les lacunes en revenant à la recherche, puis en réexpliquant avec ses propres mots.
-- Le feedback permet ensuite d'améliorer l'explication.
-
----
-<!-- _class: light -->
-
-## Search — chercher
-
-- Partir d'une question claire.
-- Comparer plusieurs sources.
-- Privilégier des ressources fiables et récentes lorsque l'actualité compte.
-- Noter les affirmations qui doivent être vérifiées.
+- **Méthode :** Search → Read → Think → Questions → Understand.
+- **Support :** un sujet peut utiliser Laravel, Alpine.js, MySQL, JSON, Tailwind CSS, JavaScript, PHP natif ou Kotlin selon l'objectif.
+- Aucune technologie n'est obligatoire pour un lab consacré à une méthode d'apprentissage.
 
 ---
 
-## Read — lire
+## 3. Definition
 
-- Lire pour comprendre, pas seulement pour collecter des citations.
-- Prendre des notes dans ses propres mots.
-- Marquer les termes et idées qui restent incertains.
-- Revenir à la source lorsqu'un passage est ambigu.
+Un **lab** est une activité d'apprentissage structurée où l'apprenant explore un sujet, met des idées en pratique et montre ce qu'il a compris.
 
 ---
 <!-- _class: light -->
 
-## Think — réfléchir
+## 4. Problem Statement
 
-- Relier les idées entre elles.
-- Trouver un exemple concret.
-- Dessiner un schéma du concept ou de son fonctionnement.
-- Expliquer comment les informations répondent à la question initiale.
+Comment passer de la lecture passive à une compréhension que l'on peut expliquer et appliquer ?
 
----
-
-## Questions — poser des questions
-
-- Qu'est-ce qui n'est pas encore compris ?
-- Dans quel cas l'idée ne fonctionne-t-elle pas ?
-- Quel exemple pourrait la distinguer d'un concept voisin ?
-- Chaque lacune devient une nouvelle question de recherche.
-
----
-<!-- _class: light -->
-
-## Understand — comprendre
-
-- Reformuler sans dépendre du jargon de la source.
-- Expliquer le concept à une autre personne.
-- Repérer où l'explication devient confuse.
-- Améliorer avec les questions et retours reçus.
+Collecter de l'information sans la questionner ni la mettre en pratique ne suffit pas à démontrer la compréhension.
 
 ---
 
-## Activité : enseigner un concept
+## 5. Solution
 
-1. Choisissez un concept étudié récemment.
-2. Trouvez deux sources et comparez leur explication.
-3. Écrivez une explication courte avec vos propres mots.
-4. Donnez un exemple et identifiez une question encore ouverte.
-5. Présentez votre explication à un pair et révisez-la après son retour.
+1. **Search :** formuler une question et trouver des sources.
+2. **Read :** lire, prendre des notes et repérer les zones floues.
+3. **Think :** relier les idées et construire un exemple.
+4. **Questions :** transformer les incertitudes en nouvelles recherches.
+5. **Understand :** expliquer avec ses mots et améliorer avec le feedback.
 
 ---
 <!-- _class: light -->
 
-## Summary & Verification Matrix
+## 6. Practice: enseigner un concept
 
-| Objectif | Statut | Preuve |
-|:---|:---:|:---|
-| Décrire les cinq étapes | Couvert | Cycle Search → Understand |
-| Relier les questions à la recherche | Couvert | Boucle d'apprentissage |
-| Expliquer un concept à autrui | Pratique | Activité de transmission |
+1. Choisissez un concept récemment étudié.
+2. Comparez deux sources et notez une différence importante.
+3. Écrivez une explication avec vos propres mots.
+4. Ajoutez un exemple et une question encore ouverte.
+5. Présentez l'explication à un pair et améliorez-la après son retour.
+
+**Livrable :** une explication courte qui répond à la question de départ.

@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "nom": "Couscous",
+        "categorie": "Maroc"
+    },
+    {
+        "id": 2,
+        "nom": "Ratatouille",
+        "categorie": "France"
+    }
+]

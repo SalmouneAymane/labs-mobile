@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Atelier — cinq erreurs JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a href="../../lab-javascript-errors.md">← Retour au support Marp</a>
+        <span>Atelier de débogage</span>
+    </header>
+
+    <main>
+        <section class="hero">
+            <p class="eyebrow">JavaScript · PHP · JSON</p>
+            <h1>Cinq erreurs.<br><span>Cinq corrections.</span></h1>
+            <p>Reproduisez les erreurs de l'atelier, comprenez leur cause et comparez-les à une correction.</p>
+            <p class="notice">Chaque reproduction est capturée et affichée ici : elle ne bloque pas la page.</p>
+        </section>
+
+        <section aria-labelledby="errors-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Diagnostic guidé</p>
+                    <h2 id="errors-title">Les cinq erreurs</h2>
+                </div>
+                <span class="count">01 — 05</span>
+            </div>
+
+            <div class="error-grid">
+                <article class="error-card">
+                    <div class="card-top"><span class="number">01</span><span class="kind">DOM · TypeError</span></div>
+                    <h3>Formulaire introuvable</h3>
+                    <code class="message">Cannot read properties of null (reading 'addEventListener')</code>
+                    <p>Le sélecteur ne trouve aucun élément. Vérifiez l'identifiant et l'ordre de chargement; si le formulaire est optionnel, protégez l'écouteur avec un contrôle.</p>
+                    <pre><code>// Erreur
+document.getElementById("form-commentaire")
+  .addEventListener("submit", handleSubmit);
+
+// Correction si le formulaire est optionnel
+const form = document.getElementById("form-commentaire");
+if (form) form.addEventListener("submit", handleSubmit);</code></pre>
+                    <div class="actions">
+                        <button type="button" data-demo="dom">Reproduire</button>
+                        <button type="button" class="secondary" data-fix="dom">Appliquer la correction</button>
+                    </div>
+                    <output class="result" id="result-dom" aria-live="polite">Choisissez une action pour voir le résultat.</output>
+                </article>
+
+                <article class="error-card">
+                    <div class="card-top"><span class="number">02</span><span class="kind">JSON · SyntaxError</span></div>
+                    <h3>Réponse HTML lue comme JSON</h3>
+                    <code class="message">Unexpected token '&lt;', "&lt;!DOCTYPE..." is not valid JSON</code>
+                    <p>Le serveur a renvoyé une page HTML (souvent une erreur PHP), mais le client essaie de la parser comme du JSON.</p>
+                    <pre><code>// Correction côté client
+const type = response.headers.get("content-type") || "";
+if (!type.includes("application/json")) {
+  throw new Error("Le serveur n'a pas renvoyé du JSON");
+}
+const data = await response.json();</code></pre>
+                    <div class="actions">
+                        <button type="button" data-demo="json">Reproduire</button>
+                        <button type="button" class="secondary" data-fix="json">Appliquer la correction</button>
+                    </div>
+                    <output class="result" id="result-json" aria-live="polite">Choisissez une action pour voir le résultat.</output>
+                </article>
+
+                <article class="error-card">
+                    <div class="card-top"><span class="number">03</span><span class="kind">Tableau · TypeError</span></div>
+                    <h3>Mauvaise forme de données</h3>
+                    <code class="message">posts.forEach is not a function</code>
+                    <p>Le code attend un tableau; l'API a renvoyé un objet qui contient sa liste dans <code>data</code>.</p>
+                    <pre><code>// Correction : valider puis sélectionner la liste
+const posts = Array.isArray(payload)
+  ? payload
+  : payload.data;
+
+if (!Array.isArray(posts)) {
+  throw new TypeError("Liste invalide");
+}
+posts.forEach(renderPost);</code></pre>
+                    <div class="actions">
+                        <button type="button" data-demo="array">Reproduire</button>
+                        <button type="button" class="secondary" data-fix="array">Appliquer la correction</button>
+                    </div>
+                    <output class="result" id="result-array" aria-live="polite">Choisissez une action pour voir le résultat.</output>
+                </article>
+
+                <article class="error-card">
+                    <div class="card-top"><span class="number">04</span><span class="kind">Réseau · TypeError</span></div>
+                    <h3>Requête impossible</h3>
+                    <code class="message">TypeError: Failed to fetch</code>
+                    <p>Le serveur est arrêté, l'URL est incorrecte, ou le navigateur bloque la requête (par exemple, CORS).</p>
+                    <pre><code>// Correction : traiter explicitement le rejet
+try {
+  const response = await fetch(apiUrl);
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  showData(await response.json());
+} catch (error) {
+  showNetworkMessage("API indisponible");
+}</code></pre>
+                    <div class="actions">
+                        <button type="button" data-demo="fetch">Reproduire</button>
+                        <button type="button" class="secondary" data-fix="fetch">Appliquer la correction</button>
+                    </div>
+                    <output class="result" id="result-fetch" aria-live="polite">Choisissez une action pour voir le résultat.</output>
+                </article>
+
+                <article class="error-card">
+                    <div class="card-top"><span class="number">05</span><span class="kind">Portée · ReferenceError</span></div>
+                    <h3>Fonction non définie</h3>
+                    <code class="message">ReferenceError: displayArticles is not defined</code>
+                    <p>La fonction appelée n'existe pas dans cette portée ou n'a pas été chargée au moment de l'appel.</p>
+                    <pre><code>// Déclarer la fonction et ses dépendances avant l'appel
+const articleList = document.querySelector("#article-list");
+function displayArticles(articles) {
+  articleList.replaceChildren(...articles.map((article) => {
+    const item = document.createElement("li");
+    item.textContent = article.title;
+    return item;
+  }));
+}
+displayArticles([{ title: "Un article" }]);</code></pre>
+                    <div class="actions">
+                        <button type="button" data-demo="function">Reproduire</button>
+                        <button type="button" class="secondary" data-fix="function">Appliquer la correction</button>
+                    </div>
+                    <output class="result" id="result-function" aria-live="polite">Choisissez une action pour voir le résultat.</output>
+                </article>
+            </div>
+        </section>
+
+        <section class="recipes" aria-labelledby="recipes-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Mini API PHP + JSON</p>
+                    <h2 id="recipes-title">Recettes de démonstration</h2>
+                </div>
+                <button type="button" id="reload-recipes" class="secondary">Charger les recettes</button>
+            </div>
+            <p id="api-status" class="api-status" aria-live="polite">Démarrez le serveur PHP indiqué dans prjt/README.md pour charger l'API.</p>
+            <ul id="recipe-list" class="recipe-list"></ul>
+        </section>
+    </main>
+
+    <footer>Atelier pédagogique · Les démonstrations d'erreur sont déclenchées uniquement par vos actions.</footer>
+</body>
+</html>

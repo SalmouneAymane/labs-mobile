@@ -1,47 +1,26 @@
 # Labs Mobile
 
-The labs and presentations in this repository are linked from the [project page](https://salmouneaymane.github.io/labs-mobile/). Open that page to browse the available labs.
+This repository contains learning labs authored as Marp Markdown presentations. Open a `lab-*.md` file in a Marp-compatible editor to preview its slides. Lab folders do not include generated HTML presentations.
 
-## Direct lab links
+## Current labs
 
-- [2TUP presentation](https://salmouneaymane.github.io/labs-mobile/2TUP/)
-- [Open the Marp presentation](https://salmouneaymane.github.io/labs-mobile/Marp/)
-- [Open the Projet fil rouge presentation](https://salmouneaymane.github.io/labs-mobile/Projet-Fil-Rouge/)
-- [Scrum lab](https://docs.google.com/presentation/d/1MbHh-CiDlV9sU_ccPLvOzxk8zY_nR9zDnNXsWo8oV1U/edit?slide=id.p#slide=id.p)
-- [Design Thinking presentation](https://canva.link/xvsaxvs1haumths)
-- [What is a Lab presentation](https://salmouneaymane.github.io/labs-mobile/what_is_lab/)
-- [What is a Lab source](./what_is_lab/doc.md)
-- [Laravel presentation](https://salmouneaymane.github.io/labs-mobile/Laravel/)
-- [Laravel Marp source and plan](./Laravel/marp.md)
-- [MVC presentation](https://salmouneaymane.github.io/labs-mobile/MVC/)
-- [MVC Marp source](./MVC/presentation-mvc.md)
-- [Git & GitHub lab](./git/git.md)
-- [Markdown folder](./markdown/)
+- [2TUP](./2TUP/lab-2tup.md)
+- [Antigravity](./antigravity/lab-antigravity.md)
+- [Git and GitHub](./git/lab-git-github.md)
+- [JavaScript Errors](./JavaScript-Errors/lab-javascript-errors.md)
+- [JavaScript Errors interactive practice](./JavaScript-Errors/prjt/README.md)
+- [Laravel](./Laravel/lab-laravel.md)
+- [Markdown](./markdown/lab-markdown.md)
+- [Marp](./Marp/lab-marp.md)
+- [MVC](./MVC/lab-mvc.md)
+- [Projet fil rouge](./Projet-Fil-Rouge/lab-projet-fil-rouge.md)
+- [Prompting](./Prompting/lab-prompting.md)
+- [Skills for AI agents](./Skills-Agents-IA/lab-skills.md)
+- [Development environment](./starter/lab-development-environment.md)
+- [What is a lab?](./what_is_lab/lab-what-is-a-lab.md)
 
-### Publishing the Marp presentation
+## Archive
 
-- `Marp/index.html` is the browser-ready slide deck served by GitHub Pages.
-- `Marp/marp.md` is the editable source.
-- Regenerate the HTML after editing the source:
-  - `npx --yes @marp-team/marp-cli@4.5.1 Marp/marp.md --html --output Marp/index.html`
-- Push both files to GitHub.
-- In **Settings → Pages**, publish from the `main` branch and `/ (root)`.
-- Open `https://salmouneaymane.github.io/labs-mobile/Marp/`.
+The previous lab folders are preserved in [`archive2/`](./archive2/). The earlier historical archive remains in [`archive/`](./archive/).
 
-### Publishing the Projet fil rouge presentation
-
-- `Projet-Fil-Rouge/index.html` is the browser-ready slide deck served by GitHub Pages.
-- `Projet-Fil-Rouge/marp.md` is the editable source.
-- Regenerate the HTML after editing the source:
-  - `npx --yes @marp-team/marp-cli@4.5.1 Projet-Fil-Rouge/marp.md --html --output Projet-Fil-Rouge/index.html`
-- Push both files to GitHub.
-- Open `https://salmouneaymane.github.io/labs-mobile/Projet-Fil-Rouge/`.
-
-### Publishing the Laravel presentation
-
-- `Laravel/index.html` is the browser-ready slide deck served by GitHub Pages.
-- `Laravel/marp.md` is the editable Marp source, starting with the presentation plan.
-- Regenerate the HTML after editing the source:
-  - `npx --yes @marp-team/marp-cli@4.5.1 Laravel/marp.md --html --output Laravel/index.html`
-- Push both files to GitHub.
-- Open `https://salmouneaymane.github.io/labs-mobile/Laravel/`.
+The root [`index.html`](./index.html) is a catalog that links directly to the editable Marp sources. Supporting practice assets are kept in their lab folders.

@@ -4,39 +4,25 @@ theme: default
 paginate: true
 size: 16:9
 style: |
-  section {
-    background-color: #0f172a;
-    color: #f8fafc;
-    font-family: 'Inter', system-ui, sans-serif;
-    padding: 40px 60px;
-  }
-  h1, h2, h3 {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    color: #38bdf8;
-  }
-  h1 { font-size: 1.8em; }
-  h2 { font-size: 1.3em; }
-  h3 { font-size: 1.05em; color: #7dd3fc; }
+  section { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', system-ui, sans-serif; padding: 40px 60px; }
+  h1, h2, h3 { font-family: 'Inter', system-ui, sans-serif; font-weight: 600; letter-spacing: -0.02em; }
+  h1 { color: #38bdf8; font-size: 1.8em; }
+  h2 { color: #38bdf8; font-size: 1.3em; }
+  h3 { color: #7dd3fc; font-size: 1.05em; }
   section.light { background-color: #f8fafc; color: #0f172a; }
   section.light h1, section.light h2, section.light h3 { color: #0284c7; }
-  pre, code {
-    background-color: #1e293b;
-    color: #e2e8f0;
-    border-radius: 6px;
-    font-family: 'Fira Code', 'Consolas', monospace;
-  }
+  pre, code { background-color: #1e293b; color: #e2e8f0; border-radius: 6px; font-family: 'Fira Code', 'Consolas', monospace; }
   section.light pre, section.light code { background-color: #e2e8f0; color: #0f172a; }
   table { width: 100%; border-collapse: collapse; font-size: 0.78em; line-height: 1.35; }
   th { background-color: #1e293b; color: #f8fafc; font-weight: 600; padding: 8px 10px; text-align: left; vertical-align: top; }
   td { background-color: #172033; color: #f8fafc; padding: 8px 10px; border-bottom: 1px solid #475569; vertical-align: top; }
   section.light th { background-color: #e0f2fe; color: #0f172a; }
-  section.light td { background-color: #fff; color: #0f172a; border-bottom: 1px solid #cbd5e1; }
+  section.light td { background-color: #ffffff; color: #0f172a; }
   section.light tbody tr:nth-child(even) td { background-color: #f1f5f9; }
+  section.light td { border-bottom: 1px solid #cbd5e1; }
 ---
 
-# MVC
+# Architecture MVC avec Laravel
 
 ---
 <!-- _class: light -->
@@ -44,135 +30,77 @@ style: |
 ## Lab Plan
 
 1. Introduction
-2. Problems Encountered
-3. Solutions Implemented
+2. Technical Stack
+3. Definition (if needed)
+4. Problem Statement
+5. Solution
+6. Practice
 
 ---
 
 ## 1. Introduction
 
-- **Purpose & scope:** Comprendre MVC et le rôle de Model, View et Controller dans une application.
-- **Objectifs :** suivre une requête Laravel et identifier la responsabilité de chaque composant.
-- **Notions clés :** route, contrôleur, modèle Eloquent, vue Blade et réponse.
+- Identifier les responsabilités Model, View et Controller.
+- Suivre le parcours d'une requête dans une application Laravel.
+- Comprendre comment ces rôles clarifient le code.
 
 ---
 <!-- _class: light -->
 
-## 2. Problems Encountered
+## 2. Technical Stack
 
-- Le support explique l'architecture ; il ne rapporte pas d'erreur d'exécution.
-- **No blocking technical problems encountered during implementation.**
-- Les exemples illustrent les rôles, mais doivent être vérifiés dans le projet et sa version Laravel.
+- **Laravel / PHP :** framework et langage serveur de l'exemple.
+- **MySQL :** stockage possible pour les modèles, selon le projet.
+- **JSON :** alternative à une vue HTML pour une réponse d'API.
+- **JavaScript, Alpine.js et Tailwind CSS :** peuvent intervenir dans l'interface, mais ne définissent pas MVC.
+- **Kotlin :** non utilisé dans cet exemple Laravel.
 
 ---
 
-## 3. Solutions Implemented
+## 3. Definition
 
-- Aucun correctif de code n'est documenté.
-- L'exemple sépare l'accès aux articles, le traitement de la requête et le rendu HTML.
-- Cette séparation facilite la lecture ; elle n'impose pas une architecture identique à tous les projets.
+| Élément | Responsabilité |
+|:---|:---|
+| Model | Représenter et manipuler les données |
+| View | Présenter les données à l'utilisateur |
+| Controller | Coordonner une requête et préparer une réponse |
+
+MVC décrit une séparation de responsabilités; les détails d'architecture dépendent du projet.
 
 ---
 <!-- _class: light -->
 
-## MVC : trois responsabilités
+## 4. Problem Statement
 
-| Composant | Responsabilité | Exemple |
-|:---|:---|:---|
-| Model | Représenter et manipuler les données | `Article` |
-| View | Présenter les données à l'utilisateur | Vue Blade |
-| Controller | Coordonner la requête et préparer une réponse | `ArticleController` |
+Comment éviter de mélanger accès aux données, traitement d'une requête et rendu de l'interface dans le même bloc de code ?
 
 ---
 
-## Le modèle
+## 5. Solution
 
-Un modèle Eloquent représente un type de données utilisé par l'application :
+Dans un exemple de liste d'articles :
+
+1. La route associe `GET /articles` à une action.
+2. Le contrôleur récupère les articles via le modèle.
+3. La vue Blade affiche leurs titres.
 
 ```php
-<?php
-
-namespace App\Models;
-
-use Illuminate\Database\Eloquent\Model;
-
-class Article extends Model
-{
-}
-```
-
-Les conventions de table et les attributs dépendent du modèle et du projet.
-
----
-<!-- _class: light -->
-
-## La vue Blade
-
-Une vue reçoit les données préparées par le contrôleur et construit l'affichage :
-
-```blade
-<h1>Articles</h1>
-
-<ul>
-    @forelse ($articles as $article)
-        <li>{{ $article->title }}</li>
-    @empty
-        <li>Aucun article pour le moment.</li>
-    @endforelse
-</ul>
-```
-
-Les doubles accolades Blade affichent une valeur échappée par défaut.
-
----
-
-## Route et contrôleur
-
-**Route (`routes/web.php`)**
-
-```php
-use App\Http\Controllers\ArticleController;
-use Illuminate\Support\Facades\Route;
-
 Route::get('/articles', [ArticleController::class, 'index']);
 ```
 
-**Action du contrôleur**
-
-```php
-$articles = Article::all();
-return view('articles', ['articles' => $articles]);
-```
+Dans l'action, préparer `$articles`, puis retourner la vue avec les données. Consulter le projet pour ses noms et conventions réels.
 
 ---
 <!-- _class: light -->
 
-## Suivre la requête
+## 6. Practice: suivre les responsabilités
 
-**Navigateur** → `GET /articles` → **Route** → **Contrôleur**
+Dans une application Laravel :
 
-Le contrôleur récupère des articles via le modèle, puis transmet le résultat à la vue Blade qui construit le HTML.
+1. Repérez une route qui affiche une collection.
+2. Trouvez son action de contrôleur.
+3. Repérez où les données sont chargées.
+4. Identifiez la vue ou le format JSON de la réponse.
+5. Dessinez le flux et expliquez le rôle de chaque composant.
 
-**Idée clé :** le contrôleur orchestre les composants au lieu de mélanger la requête, l'accès aux données et tout le balisage.
-
----
-
-## Activité : classer les responsabilités
-
-Pour une page qui liste des articles :
-
-1. Où décririez-vous la requête de la page ?
-2. Quel composant prépare ou récupère les articles ?
-3. Quel composant affiche leur titre ?
-4. Quel flux relie la route, le contrôleur, le modèle et la vue ?
-
----
-<!-- _class: light -->
-
-## Summary & Verification Matrix
-
-| Objectif | Statut | Preuve |
-|:---|:---:|:---|
-| Distinguer Model, View et Controller | Couvert | Tableau des responsabilités |
-| Décrire le parcours d'une requête | Couvert | Route, contrôleur et vue |
-| Vérifier le code dans un projet Laravel | À réaliser | Aucun projet/version fourni pour test |
+**Livrable :** schéma Route → Controller → Model → View / JSON.

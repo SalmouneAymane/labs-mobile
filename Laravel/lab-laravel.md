@@ -4,39 +4,25 @@ theme: default
 paginate: true
 size: 16:9
 style: |
-  section {
-    background-color: #0f172a;
-    color: #f8fafc;
-    font-family: 'Inter', system-ui, sans-serif;
-    padding: 40px 60px;
-  }
-  h1, h2, h3 {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    color: #38bdf8;
-  }
-  h1 { font-size: 1.8em; }
-  h2 { font-size: 1.3em; }
-  h3 { font-size: 1.05em; color: #7dd3fc; }
+  section { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', system-ui, sans-serif; padding: 40px 60px; }
+  h1, h2, h3 { font-family: 'Inter', system-ui, sans-serif; font-weight: 600; letter-spacing: -0.02em; }
+  h1 { color: #38bdf8; font-size: 1.8em; }
+  h2 { color: #38bdf8; font-size: 1.3em; }
+  h3 { color: #7dd3fc; font-size: 1.05em; }
   section.light { background-color: #f8fafc; color: #0f172a; }
   section.light h1, section.light h2, section.light h3 { color: #0284c7; }
-  pre, code {
-    background-color: #1e293b;
-    color: #e2e8f0;
-    border-radius: 6px;
-    font-family: 'Fira Code', 'Consolas', monospace;
-  }
+  pre, code { background-color: #1e293b; color: #e2e8f0; border-radius: 6px; font-family: 'Fira Code', 'Consolas', monospace; }
   section.light pre, section.light code { background-color: #e2e8f0; color: #0f172a; }
   table { width: 100%; border-collapse: collapse; font-size: 0.78em; line-height: 1.35; }
   th { background-color: #1e293b; color: #f8fafc; font-weight: 600; padding: 8px 10px; text-align: left; vertical-align: top; }
   td { background-color: #172033; color: #f8fafc; padding: 8px 10px; border-bottom: 1px solid #475569; vertical-align: top; }
   section.light th { background-color: #e0f2fe; color: #0f172a; }
-  section.light td { background-color: #fff; color: #0f172a; border-bottom: 1px solid #cbd5e1; }
+  section.light td { background-color: #ffffff; color: #0f172a; }
   section.light tbody tr:nth-child(even) td { background-color: #f1f5f9; }
+  section.light td { border-bottom: 1px solid #cbd5e1; }
 ---
 
-# Laravel
+# Découvrir Laravel
 
 ---
 <!-- _class: light -->
@@ -44,171 +30,71 @@ style: |
 ## Lab Plan
 
 1. Introduction
-2. Problems Encountered
-3. Solutions Implemented
+2. Technical Stack
+3. Definition (if needed)
+4. Problem Statement
+5. Solution
+6. Practice
 
 ---
 
 ## 1. Introduction
 
-- **Purpose & scope:** Découvrir Laravel et comprendre comment il structure une application Web PHP.
-- **Objectifs :** expliquer le rôle d'un framework, suivre une requête et repérer les outils courants.
-- **Notions clés :** PHP, HTTP, routes, contrôleurs, Eloquent, Blade et migrations.
+- Comprendre le rôle de Laravel dans une application Web PHP.
+- Suivre une requête de son URL jusqu'à la réponse.
+- Identifier routes, contrôleurs, modèles, vues et migrations.
 
 ---
 <!-- _class: light -->
 
-## 2. Problems Encountered
+## 2. Technical Stack
 
-- Le support présente les concepts de Laravel ; aucun incident d'exécution précis n'est documenté.
-- **No blocking technical problems encountered during implementation.**
-- La version et la configuration d'un projet Laravel ne sont pas précisées dans ce support.
-
----
-
-## 3. Solutions Implemented
-
-- Aucun correctif de code n'est documenté dans le support.
-- Les exemples séparent la route, le contrôleur, l'accès aux données et la présentation.
-- Vérifier les exemples contre la version du projet avant de les intégrer à une application.
-
----
-<!-- _class: light -->
-
-## Qu'est-ce que Laravel ?
-
-- Framework open source écrit en **PHP** pour construire des applications Web.
-- Fournit des conventions et des composants réutilisables.
-- Peut répondre avec une page HTML ou des données JSON.
-- Il complète PHP ; il ne remplace ni le langage ni les bases du Web.
+- **Laravel et PHP :** framework et langage côté serveur.
+- **MySQL :** base de données possible, selon la configuration du projet.
+- **JSON :** format de réponse possible pour une API.
+- **Alpine.js, Tailwind CSS et JavaScript :** peuvent enrichir l'interface; ils ne sont pas obligatoires pour chaque page Laravel.
+- **Kotlin :** non utilisé dans l'exemple Web.
 
 ---
 
-## Le rôle d'un framework Web
+## 3. Definition
 
-1. Recevoir une requête HTTP.
-2. Associer la requête à une route.
-3. Exécuter le traitement applicatif et accéder aux données si nécessaire.
-4. Retourner une réponse au client.
-
-Le framework aide à organiser ces étapes et les responsabilités du code.
+Un **framework** fournit des composants et conventions pour organiser une application. Laravel peut recevoir une requête HTTP, l'associer à une route, exécuter une action et produire une réponse HTML ou JSON.
 
 ---
 <!-- _class: light -->
 
-## Architecture MVC
+## 4. Problem Statement
 
-| Élément | Responsabilité | Exemple Laravel |
-|:---|:---|:---|
-| Model | Représenter et manipuler les données | Modèle Eloquent |
-| View | Présenter les informations | Vue Blade |
-| Controller | Coordonner le traitement d'une requête | Contrôleur PHP |
+Comment construire une application Web dont les requêtes, les données et l'affichage restent compréhensibles et maintenables ?
 
-MVC répartit les responsabilités ; une petite route peut aussi renvoyer une réponse directement.
+Mélanger toutes ces responsabilités dans un seul bloc rend le changement et la vérification plus difficiles.
 
 ---
 
-## Parcours d'une requête
+## 5. Solution
 
-**Navigateur** → **Route** → **Contrôleur** → **Modèle / données**
+Séparer les rôles selon le besoin :
 
-**Réponse :** vue HTML, JSON ou autre réponse HTTP
+- **Route :** associer méthode et URL à une action.
+- **Contrôleur :** coordonner le traitement.
+- **Modèle Eloquent :** représenter et consulter les données.
+- **Vue Blade :** construire le HTML.
+- **Migration :** décrire une évolution du schéma.
 
-- La route associe une méthode et une URL à un traitement.
-- Le contrôleur coordonne la logique.
-- Le modèle intervient si l'application lit ou modifie des données.
+Les versions Laravel diffèrent : consulter la documentation correspondant au projet.
 
 ---
 <!-- _class: light -->
 
-## Outils courants
+## 6. Practice: suivre une route
 
-| Outil | Utilité |
-|:---|:---|
-| Routage | Associer une URL et une méthode HTTP à une action |
-| Middleware | Examiner ou filtrer des requêtes |
-| Eloquent | Interagir avec les données à travers des modèles |
-| Migrations | Décrire les changements du schéma de données |
-| Blade | Construire des vues HTML réutilisables |
-| Tests et validation | Vérifier le comportement et les entrées |
+Dans un projet Laravel existant :
 
----
+1. Repérez une route `GET` et notez son URL.
+2. Suivez l'action vers le contrôleur, si elle en utilise un.
+3. Identifiez les données transmises à la vue ou à la réponse JSON.
+4. Décrivez le trajet requête → réponse.
+5. Vérifiez l'exemple avec la documentation de la version du projet.
 
-## Exemple : une route
-
-Dans `routes/web.php`, une route `GET` peut répondre directement :
-
-```php
-<?php
-
-use Illuminate\Support\Facades\Route;
-
-Route::get('/bonjour', function () {
-    return 'Bonjour !';
-});
-```
-
-**Réponse attendue :** une requête `GET /bonjour` reçoit le texte `Bonjour !`.
-
----
-<!-- _class: light -->
-
-## Déléguer au contrôleur
-
-```php
-<?php
-
-use App\Http\Controllers\WelcomeController;
-use Illuminate\Support\Facades\Route;
-
-Route::get('/bienvenue', [WelcomeController::class, 'index']);
-```
-
-Le contrôleur peut préparer une réponse ou transmettre des données à une vue. La structure exacte dépend du projet Laravel.
-
----
-
-## Blade : afficher des données
-
-```blade
-<h1>Bonjour, {{ $name }} !</h1>
-```
-
-Une action de contrôleur peut transmettre la variable à la vue :
-
-```php
-return view('welcome', ['name' => 'Aymane']);
-```
-
-Blade échappe par défaut le contenu affiché avec `{{ ... }}`.
-
----
-<!-- _class: light -->
-
-## Activité : suivre la requête
-
-1. Repérez la méthode et l'URL de la route d'exemple.
-2. Décrivez ce que la route renvoie.
-3. Expliquez ce qui changerait si elle appelait un contrôleur.
-4. Consultez la documentation correspondant à la version Laravel du projet.
-
----
-
-## À retenir
-
-- Laravel est un framework PHP côté serveur.
-- Les routes orientent les requêtes vers un traitement.
-- MVC distingue données, présentation et coordination.
-- Eloquent, Blade et les migrations répondent à des besoins différents.
-
----
-<!-- _class: light -->
-
-## Summary & Verification Matrix
-
-| Objectif | Statut | Preuve |
-|:---|:---:|:---|
-| Expliquer le rôle de Laravel | Couvert | Slides de présentation |
-| Décrire MVC et une requête | Couvert | Tableau et parcours |
-| Lire les exemples de route et Blade | Couvert | Extraits PHP et Blade |
-| Exécuter les exemples dans un projet | À réaliser | Aucun projet/version fourni pour test |
+**Livrable :** un petit schéma du parcours et une phrase par composant.
