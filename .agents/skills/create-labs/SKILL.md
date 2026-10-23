@@ -23,6 +23,8 @@ Use this skill when:
 
 Do not use this skill for unrelated application features or edits to existing lab content that do not involve creating or expanding a learning resource.
 
+When the user asks to create a new lab and has not said whether they want hands-on practice, ask them if the lab should include a practice exercise or project before drafting. If they have already specified this, do not ask again. If they do not answer, use a concise practice activity as the default.
+
 ## Mandatory Lab Structure
 
 Every new or remade lab must:
@@ -56,7 +58,7 @@ Every Marp presentation must start with `marp: true`. After the title slide, fol
    ```
 
 3. **Introduction:** Briefly explain the lab's purpose, scope, audience, and learning objectives.
-4. **Technical Stack:** Identify relevant technologies from the project's stack: Laravel, Alpine.js, MySQL, JSON, Tailwind CSS, JavaScript, native PHP, and Kotlin. Explain each selected technology's role. Do not imply every lab uses the entire stack; identify the topic's relevant tools when it is not about application development.
+4. **Technical Stack:** Identify relevant technologies from the project's stack: Laravel, Alpine.js, MySQL, JSON, Tailwind CSS, Preline, JavaScript, native PHP, and Kotlin. Explain each selected technology's role. Do not imply every lab uses the entire stack; identify the topic's relevant tools when it is not about application development.
 5. **Definition (if needed):** Define essential terms before relying on them. Omit this section when the audience can follow the material without a separate definition section.
 6. **Problem Statement:** Describe the concrete need, user problem, or technical challenge the lab addresses. Do not invent implementation incidents.
 7. **Solution:** Explain the approach and key implementation decisions that address the problem.
@@ -189,7 +191,7 @@ After the required frontmatter above, follow this outline. Replace bracketed gui
 
 ## 2. Technical Stack
 
-- [List only the relevant technologies from Laravel, Alpine.js, MySQL, JSON, Tailwind CSS, JavaScript, native PHP, and Kotlin.]
+- [List only the relevant technologies from Laravel, Alpine.js, MySQL, JSON, Tailwind CSS, Preline, JavaScript, native PHP, and Kotlin.]
 - [Explain the role each selected technology plays in this lab.]
 
 ---
