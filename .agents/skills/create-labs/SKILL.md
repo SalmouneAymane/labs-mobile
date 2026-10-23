@@ -212,19 +212,19 @@ After the required frontmatter above, follow this outline. Replace bracketed gui
 
 1. **Fit the audience and goal.** Identify the topic, audience, language, learning goals, and requested format. Use sensible defaults from nearby labs; ask a focused question only if an essential choice would otherwise be a significant guess.
 2. **Teach clearly.** Explain concepts in original, accessible language. Include relevant examples, a practical activity or reflection, and a concise recap. Keep the scope coherent and avoid unsupported claims.
-3. **Follow local conventions.** Treat `rule.md` as authoritative for the root presentation list. Use the exact folder name as the link text and `./<folder-name>/index.html` as the relative URL. Match the surrounding markup.
+3. **Follow local conventions.** Match the root `index.html` presentation-list markup. Use the exact folder name as the link text and `./<folder-name>/index.html` as the relative URL.
 4. **Use reliable sources.** Verify factual claims against reliable sources when research tools are available, and include useful source links in the material.
 5. **Preserve the repository.** Inspect the working tree before editing and preserve unrelated user changes. Keep changes focused on the requested lab.
 6. **Follow nearby examples.** Use `Marp/marp.md` for Marp conventions and `MVC/presentation-mvc.md` for slide content with speaker notes, while keeping the required five-slide architecture for new Marp decks.
 
 ## Workflow
 
-1. Read `rule.md`, the root `index.html`, and the closest existing lab sources and entry page.
+1. Read the root `index.html` and the closest existing lab sources and entry page.
 2. Choose a clear, consistent folder name and a format suited to the lab. For a slide deck, create one `lab-<topic>.md` source inside the lab folder.
 3. Develop the material for the intended audience. For a Marp deck, follow the mandatory opening slide sequence, then add practical examples and a concise evidence-based recap.
 4. Verify factual claims against reliable sources when research tools are available.
 5. Add the editable source and folder-local `index.html`. Make the entry page descriptive, accessible, and navigable back to the root presentation directory. For Marp, ensure the browser entry presents the deck and is current with the source when project tooling is available.
-6. Add a link to the root `index.html` presentation list using the exact folder name and relative URL required by `rule.md`.
+6. Add a link to the root `index.html` presentation list using the exact folder name and relative URL.
 7. Check that links and relative paths resolve, the root entry follows the rule, the source and entry page agree, the first five Marp slides follow the required sequence, and any generated deck is current. Run focused validation when the format or project tooling provides one.
 
 ## Output & Verification
@@ -240,6 +240,6 @@ Deliver a complete lab folder and matching root presentation-list entry. For a M
 | Inventing technical incidents or claiming unrun tests passed | It makes the presentation misleading. | Describe real issues and fixes; state when no blocking problems occurred and report only actual validation. |
 | Omitting language tags on code blocks or alignments on tables | Examples become harder to read and inconsistent. | Tag every code fence and explicitly align Markdown table columns. |
 | Splitting a Marp deck into companion Markdown or exercise files | The deck content becomes scattered. | Keep all slide content and exercises in the single `lab-<topic>.md` source. |
-| Creating a lab without a folder-local `index.html` or root listing entry | The lab is not consistently accessible or discoverable. | Follow `rule.md` and keep the root presentation list in sync. |
+| Creating a lab without a folder-local `index.html` or root listing entry | The lab is not consistently accessible or discoverable. | Match the root presentation-list conventions and keep the list in sync. |
 | Overwriting an existing lab without permission | Existing learning material may be lost. | Create a new folder or edit an existing lab only when requested. |
 | Leaving links, generated decks, or source files out of sync | The delivered lab may be incomplete or misleading. | Verify paths and source-to-entry consistency before finishing. |
