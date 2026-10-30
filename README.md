@@ -12,6 +12,7 @@ This repository contains learning labs authored as Marp Markdown presentations. 
 - [Laravel](./Laravel/lab-laravel.md)
 - [Markdown](./markdown/lab-markdown.md)
 - [Marp](./Marp/lab-marp.md)
+- [Shared lab structure](./Planification-Labs/lab-planification-labs.md)
 - [MVC](./MVC/lab-mvc.md)
 - [Projet fil rouge](./Projet-Fil-Rouge/lab-projet-fil-rouge.md)
 - [Prompting](./Prompting/lab-prompting.md)

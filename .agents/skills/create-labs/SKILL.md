@@ -51,20 +51,20 @@ Every Marp presentation must start with `marp: true`. After the title slide, fol
 
    1. Introduction
    2. Technical Stack
-   3. Definition (if needed)
-   4. Problem Statement
+   3. Problem Statement
+   4. Definition (if needed)
    5. Solution
-   6. Practice
+   6. Practice (if needed)
    ```
 
 3. **Introduction:** Briefly explain the lab's purpose, scope, audience, and learning objectives.
 4. **Technical Stack:** Identify relevant technologies from the project's stack: Laravel, Alpine.js, MySQL, JSON, Tailwind CSS, Preline, JavaScript, native PHP, and Kotlin. Explain each selected technology's role. Do not imply every lab uses the entire stack; identify the topic's relevant tools when it is not about application development.
-5. **Definition (if needed):** Define essential terms before relying on them. Omit this section when the audience can follow the material without a separate definition section.
-6. **Problem Statement:** Describe the concrete need, user problem, or technical challenge the lab addresses. Do not invent implementation incidents.
+5. **Problem Statement:** Describe the concrete need, user problem, or technical challenge the lab addresses. Do not invent implementation incidents.
+6. **Definition (if needed):** Define essential terms before relying on them. Omit this section when the audience can follow the material without a separate definition section.
 7. **Solution:** Explain the approach and key implementation decisions that address the problem.
-8. **Practice:** Include a hands-on exercise or guided implementation, with clear steps and expected outcomes. Keep and link relevant existing practice files.
+8. **Practice (if needed):** Include a hands-on exercise or guided implementation when requested or useful for the learning objectives, with clear steps and expected outcomes. Keep and link relevant existing practice files.
 
-Use these sections as the presentation architecture in the listed order; a section may span multiple slides. Keep the presentation in one Marp Markdown file. Use complete, runnable code when appropriate and declare the language on every code fence. End with a concise recap or verification matrix when it fits; report only validation that actually occurred.
+Use these sections as the presentation architecture in the listed order; a section may span multiple slides. Practice is optional and may be omitted when it is not needed or requested. Keep the presentation in one Marp Markdown file. Use complete, runnable code when appropriate and declare the language on every code fence. End with a concise recap or verification matrix when it fits; report only validation that actually occurred.
 
 ## Design & Formatting Standards
 
@@ -175,10 +175,10 @@ After the required frontmatter above, follow this outline. Replace bracketed gui
 
 1. Introduction
 2. Technical Stack
-3. Definition (if needed)
-4. Problem Statement
+3. Problem Statement
+4. Definition (if needed)
 5. Solution
-6. Practice
+6. Practice (if needed)
 
 ---
 
@@ -196,15 +196,15 @@ After the required frontmatter above, follow this outline. Replace bracketed gui
 
 ---
 
-## 3. Definition (if needed)
+## 3. Problem Statement
 
-- [Define essential terms; omit this section if separate definitions are unnecessary.]
+- [Describe the real need or challenge this lab addresses.]
 
 ---
 
-## 4. Problem Statement
+## 4. Definition (if needed)
 
-- [Describe the real need or challenge this lab addresses.]
+- [Define essential terms; omit this section if separate definitions are unnecessary.]
 
 ---
 
@@ -215,9 +215,9 @@ After the required frontmatter above, follow this outline. Replace bracketed gui
 ---
 <!-- _class: light -->
 
-## 6. Practice: [Exercise Name]
+## 6. Practice (if needed): [Exercise Name]
 
-- [Give clear steps and expected outcomes.]
+- [When useful or requested, give clear steps and expected outcomes.]
 - [Include relevant examples or complete, runnable code when appropriate.]
 
 ---
@@ -243,7 +243,7 @@ After the required frontmatter above, follow this outline. Replace bracketed gui
 
 1. Read the root `index.html`, the closest existing lab sources, and any practice files that should be preserved.
 2. Choose a clear, consistent folder name and create one `lab-<topic>.md` Marp source inside the lab folder.
-3. Develop the material for the intended audience. For a Marp deck, follow the mandatory section sequence, select relevant technologies from the defined stack, then add practical examples and a concise evidence-based recap.
+3. Develop the material for the intended audience. For a Marp deck, follow the mandatory section sequence, select relevant technologies from the defined stack, then add practice when useful or requested and a concise evidence-based recap.
 4. Verify factual claims against reliable sources when research tools are available.
 5. Preserve relevant practice files and assets beside the Marp source.
 6. Add or update a root `index.html` catalog link directly to the Marp Markdown source.
@@ -258,7 +258,7 @@ Deliver a lab folder with one editable `lab-<topic>.md` Marp source, preserved r
 | Avoid | Why | Required approach |
 |:---|:---|:---|
 | Adding names, IDs, dates, or subtitles to the title slide without being asked | The required opening slide is only the lab title. | Keep slide 1 to the lab name or topic. |
-| Omitting or reordering required Marp sections | It breaks the consistent presentation architecture. | Keep Title > Lab Plan > Introduction > Technical Stack > Definition (if needed) > Problem Statement > Solution > Practice. |
+| Omitting or reordering required Marp sections | It breaks the consistent presentation architecture. | Keep Title > Lab Plan > Introduction > Technical Stack > Problem Statement > Definition (if needed) > Solution > Practice (if needed). |
 | Inventing technical incidents or claiming unrun tests passed | It makes the presentation misleading. | Describe real issues and fixes; state when no blocking problems occurred and report only actual validation. |
 | Omitting language tags on code blocks or alignments on tables | Examples become harder to read and inconsistent. | Tag every code fence and explicitly align Markdown table columns. |
 | Requiring per-lab HTML to display a Marp source | It duplicates the editable deck and is not part of the Marp-only workflow. | Keep one Marp source and link directly to it from the root catalog. |
