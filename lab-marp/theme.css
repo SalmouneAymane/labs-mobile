@@ -1,0 +1,81 @@
+/* @theme music-concept */
+@import 'default';
+
+section {
+  background: #101827;
+  color: #edf2f7;
+  font-family: 'Aptos', 'Segoe UI', sans-serif;
+  padding: 48px 64px;
+}
+
+h1,
+h2,
+h3 {
+  color: #f5b942;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.2em;
+}
+
+h2 {
+  font-size: 1.55em;
+}
+
+h3 {
+  color: #84d9c5;
+  font-size: 1.1em;
+}
+
+section.lead {
+  background: #17243a;
+  text-align: center;
+}
+
+section.lead h1 {
+  font-size: 2.6em;
+}
+
+section.accent {
+  background: #173c46;
+}
+
+section.accent h2 {
+  color: #84d9c5;
+}
+
+img {
+  max-height: 88px;
+  width: auto;
+  vertical-align: middle;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  background: #24515a;
+  color: #ffffff;
+  text-align: left;
+}
+
+th,
+td {
+  border-bottom: 1px solid #49616d;
+  padding: 10px 12px;
+}
+
+blockquote {
+  border-left: 4px solid #f5b942;
+  color: #cbd5e1;
+  padding-left: 18px;
+}
+
+header,
+footer {
+  color: #9fb3c8;
+  font-size: 0.65em;
+}
