@@ -1,4 +1,4 @@
-# Slide 1 — Project Topic
+# Project Topic
 
 My project is a **self-owned music platform** where listeners can discover music and create playlists. It’s *personal*—not ~~just another copy~~ of existing services.
 
@@ -11,7 +11,7 @@ My project is a **self-owned music platform** where listeners can discover music
 
 ---
 
-# Slide 2 — Project Objective
+# Project Objective
 
 The goal is to make listening and organizing music simple, while learning Markdown with this presentation. See the [Markdown Guide](https://www.markdownguide.org/).
 
