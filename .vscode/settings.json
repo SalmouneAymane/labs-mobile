@@ -1,6 +1,5 @@
 {
   "markdown.marp.themes": [
-    "./lab-marp/theme.css",
-    "./lab-stack/theme.css"
+    "./lab-marp/theme.css"
   ]
 }
