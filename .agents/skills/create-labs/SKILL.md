@@ -2,6 +2,8 @@
 name: create-labs
 description: "Create or expand a learning lab, workshop, or technical presentation in this repository. Use when writing lab materials or formatting a lab deliverable as a standardized Marp slide deck."
 argument-hint: "Topic and any audience, language, or format preferences"
+user-invocable: false
+disable-model-invocation: true
 ---
 
 # Create Labs
